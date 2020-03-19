@@ -1,3 +1,5 @@
 
-# Recursively ignores java class files
+
 **/*.class
+**/*.swp
+*.zip
