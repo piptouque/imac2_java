@@ -2,10 +2,11 @@
 package fr.umlv.arthur;
 
 import fr.umlv.arthur.Equipment;
+import fr.umlv.arthur.Protection;
 
 import java.util.Objects;
 
-public class Shield extends Equipment {
+public class Shield extends Equipment implements Protection {
 	private final int _protection;	
 
 	public Shield(String name, int protection) {
@@ -15,12 +16,11 @@ public class Shield extends Equipment {
 		}
 		_protection = protection;
 	}
-
+	
+	@Override
 	public int protection() {
 		return _protection;
 	}
-	@Override
-	public int use() { return protection(); }
 	@Override
 	public int hashCode() {
 		// still bad

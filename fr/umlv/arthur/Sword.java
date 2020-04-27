@@ -3,27 +3,27 @@
 package fr.umlv.arthur;
 
 import fr.umlv.arthur.Equipment;
+import fr.umlv.arthur.Weapon;
 
 import java.util.Objects;
 
-public class Sword extends Equipment {
+public class Sword extends Equipment implements Weapon {
 	private final int _damage;
 
-	public Sword(String name, int damage) {
+	public Sword(final String name, final int damage) {
 		super(name);
 		if(damage <= 0) {
 			throw new IllegalArgumentException("This sword is very obviously cursed, get an exorcist.");
 		}
 		_damage = damage;
 	}
-	public Sword(Sword other) {
+	public Sword(final Sword other) {
 		this(other.name(), other.damage());
 	}
+	@Override
 	public int damage() {
 		return _damage;
 	}
-	@Override
-	public int use() { return damage(); }
 	@Override
 	public int hashCode() {
 		// bad.

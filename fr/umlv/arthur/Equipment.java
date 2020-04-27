@@ -6,8 +6,7 @@ import java.util.Objects;
 public abstract class Equipment {
 	private final String _name;
 
-	public abstract int use();
-	public String name() { return name(); };
+	public String name() { return _name; };
 
 	public Equipment(String name) {
 		_name = Objects.requireNonNull(name);
@@ -20,12 +19,10 @@ public abstract class Equipment {
 	public String toString() {
 		return name();
 	}
-
 	@Override
 	public int hashCode() {
 		return _name.hashCode();
 	}
-
 	@Override
 	public boolean equals(Object o) {
 		if(!(o instanceof Equipment)) {
