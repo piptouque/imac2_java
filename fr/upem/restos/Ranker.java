@@ -31,6 +31,12 @@ public class Ranker<E> {
 	_rankings.putIfAbsent(item, new ArrayList<Evaluation>());
 	var list = _rankings.get(item);
 	list.add(Objects.requireNonNull(eval));	
+	/* 
+	 * sorting right after
+	 * we shouldn't sort in a print function
+	 * so here.
+	 */
+	list.sort((eval1, eval2) -> eval2.getScore() - eval1.getScore());
   }
 
   public void addEvaluation(E item, int score, String comment) {

@@ -32,7 +32,6 @@ public abstract class Establishment {
 
   @Override
   public int hashCode() {
-    /* bad, as always. */
     return Objects.hash(_name, _stars);
   }
 

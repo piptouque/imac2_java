@@ -33,7 +33,6 @@ public class Restaurant {
 
   @Override
   public int hashCode() {
-    /* bad, as always. */
     return Objects.hash(_name, _covers, _stars);
   }
 
